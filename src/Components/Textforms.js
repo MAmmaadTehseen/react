@@ -29,11 +29,11 @@ export default function Textforms(props) {
 
   return (
     <>
-    <div >
+    <div  className='text-dark'>
             
-        <div className="mb-3">
+        <div className={`mb-3 `}>
         <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.text}</label>
-        <textarea className="form-control" onChange={handleonchange} value={text} id="exampleFormControlTextarea1" rows="8"></textarea>
+        <textarea className={`form-control `}  onChange={handleonchange} value={text} id="exampleFormControlTextarea1" rows="8"></textarea>
         </div>
         <button className="btn btn-primary" onClick={handleUpClick}>To uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleLoClick}>To lower case</button>
@@ -41,7 +41,7 @@ export default function Textforms(props) {
         <button className="btn btn-primary mx-2" onClick={HandleClearClick}>Clear Text</button>
         <button className="btn btn-primary mx-2" onClick={RemoveExtraspace}>Remove Extra space</button>
     </div>
-    <div className="container">
+    <div className={`container text-${props.mode=="light"?"dark":"light"} `}>
       <h2>
         Your text summary
       </h2>
@@ -58,6 +58,7 @@ export default function Textforms(props) {
         {text}
       </p>
     </div>
+    
 
     </>
   )
