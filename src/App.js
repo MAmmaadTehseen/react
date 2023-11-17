@@ -5,9 +5,10 @@ import Navbar from './Components/Navbar';
 import Textforms from './Components/Textforms';
 import React,{useState} from 'react';
 import Alert from './Components/Alert';
+import Mode from './Components/Mode';
 
 function App() {
-  const [mode,setmode]=useState('light');
+  const [mode,setmode]=useState("light");
   const  [alert,setAlert]=useState(null);
 
   const showAlert=(message,type)=>{
@@ -17,13 +18,13 @@ function App() {
     })
     setTimeout(() => {
       setAlert(null);
-    }, 1000);
+    },2500);
   }
 
   const togglemode=()=>{
     if(mode==='light'){
       setmode('dark');
-      document.body.style.backgroundColor='grey';
+      document.body.style.backgroundColor='black';
       // document.body.style.Color='white';
       showAlert("Dark mode has been enabled","success");
 
@@ -32,7 +33,7 @@ function App() {
     else{
       setmode('light');
       document.body.style.backgroundColor='white';
-      // document.body.style.Color='black';
+      document.body.style.Color='black';
       showAlert("Light mode has been enabled","success");
     }
   }
@@ -40,12 +41,12 @@ function App() {
 <>
 <Navbar title="Text Utiles" mode={mode} togglemode={togglemode}/>
 <Alert  alert={alert}/>
+<Mode mode={mode} togglemode={togglemode}/>
 <div className="container">
-<Textforms text="Enter your text to analyze"        />
+<Textforms mode={mode} text="Enter your text to analyze"/>
 
 </div>
 </>
-
   );
 }
 
