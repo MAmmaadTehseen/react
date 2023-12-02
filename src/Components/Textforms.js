@@ -45,8 +45,7 @@ export default function Textforms(props) {
   return (
     <>
     <div >
-      
-            
+                  
         <div className={`mb-3 `}>
         <label htmlFor="exampleFormControlTextarea1" className={`form-label text-${props.mode==="light"?"dark":"light"}`}>{props.text}</label>
         <textarea className={`form-control  rounded border-dark bg-${props.mode==="light"?"light":"dark"} text-${props.mode==="light"?"dark":"light"}`}  onChange={handleonchange} value={orignaltext} id="exampleFormControlTextarea1" rows="2"></textarea>

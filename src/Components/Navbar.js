@@ -18,9 +18,6 @@ export default function Navbar(props) {
         <li className="nav-item">
           <a className={`nav-link text-${props.mode==="light"?"grey":"light"}`} href="https://github.com/MAmmaadTehseen" target='_blank'>Contact Us</a>
         </li>
-       
-       
-       
       </ul>
       
     </div>
