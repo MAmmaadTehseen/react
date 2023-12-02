@@ -39,9 +39,9 @@ function App() {
   }
   return (
 <>
-<Navbar title="Text Utiles" mode={mode} togglemode ={togglemode}/>
+<Navbar title="Text Utiles" mode={mode} togglemode={togglemode}/>
 <Alert  alert={alert}/>
-<Mode mode={mode} togglemode ={togglemode}/>
+<Mode mode={mode} togglemode={togglemode}/>
 <div className="container">
 <Textforms mode={mode} text="Enter your text to analyze"/>
 
