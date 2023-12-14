@@ -11,7 +11,7 @@ export default function Textforms(props) {
     const handleUpClick=()=>{
         let newtext=text.toUpperCase();
         setText(newtext);
-        setTask("Text is converted to uppercase");
+        setTask(" Text is converted to uppercase");
     }   
     const handleonchange=(event)=>{
         setText(event.target.value);
