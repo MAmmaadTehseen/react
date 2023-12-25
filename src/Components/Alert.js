@@ -8,12 +8,6 @@ function Alert(props) {
         role="alert"
       >
         <strong>{props.alert.type}</strong> :{props.alert.msg}
-        <button
-          type="button"
-          className="btn btn-primary m-2"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button>
       </div>
     )
   );
