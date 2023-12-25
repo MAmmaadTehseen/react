@@ -52,6 +52,7 @@ export default function Textforms(props) {
           >
             {props.text}
           </label>
+
           <textarea
             className={`form-control  rounded border-dark bg-${
               props.mode === "light" ? "light" : "dark"
@@ -62,6 +63,9 @@ export default function Textforms(props) {
             rows="2"
           ></textarea>
         </div>
+        <button className="btn btn-secondary m-2" onClick={HandleClearClick}>
+          Clear Text
+        </button>
         <button className="btn btn-primary" onClick={handleUpClick}>
           To uppercase
         </button>
@@ -71,9 +75,7 @@ export default function Textforms(props) {
         <button className="btn btn-primary m-2" onClick={handleSpace}>
           Remove spaces{" "}
         </button>
-        <button className="btn btn-primary m-2" onClick={HandleClearClick}>
-          Clear Text
-        </button>
+
         <button className="btn btn-primary m-2" onClick={RemoveExtraspace}>
           Remove Extra space
         </button>
