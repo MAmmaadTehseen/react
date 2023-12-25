@@ -1,12 +1,23 @@
-import React from 'react'
+import React from "react";
 
 export default function Mode(props) {
   return (
-    <div className={`container d-inline border form-check ` }>
-          <input className="form-check-input"   type="radio" name="gridRadios" id="gridRadios1" onClick={props.togglemode} />
-          <label className={`form-check-label text-${props.mode ==="light"?"DARK":"light"}`} htmlFor="gridRadios1">
-            {`${props.mode==="light"?"Dark":"Light"} Mode`}
-          </label>
-        </div>
-  )
+    <div class="form-check form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckChecked"
+        onClick={props.togglemode}
+      />
+      <label
+        class={`form-check-label text-${
+          props.mode === "light" ? "DARK" : "light"
+        }`}
+        for="flexSwitchCheckChecked"
+      >
+        Dark mode
+      </label>
+    </div>
+  );
 }

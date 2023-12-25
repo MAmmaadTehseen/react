@@ -24,7 +24,7 @@ function App() {
     if (mode === "light") {
       setmode("dark");
       document.body.style.backgroundColor = "black";
-      // document.body.style.Color='white';
+      document.body.style.Color = "grey";
       showAlert("Dark mode has been enabled", "success");
     } else {
       setmode("light");
