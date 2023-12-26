@@ -37,22 +37,11 @@ function App() {
   };
   return (
     <>
-      <Router>
-        <Navbar title="Text Utiles" mode={mode} togglemode={togglemode} />
-        <Alert alert={alert} />
-        <Mode mode={mode} togglemode={togglemode} />
-        <Switch>
-          <Route path="/about">
-            <About mode={mode} />
-          </Route>
-
-          <Route path="/">
-            <div className="container">
-              <Textforms mode={mode} text="Enter your text to analyze" />
-            </div>
-          </Route>
-        </Switch>
-      </Router>
+      <Navbar title="Text Utiles" mode={mode} togglemode={togglemode} />
+      <Alert alert={alert} />
+      <Mode mode={mode} togglemode={togglemode} />
+      <Textforms mode={mode} text="Enter your text to analyze" />
+      {/* <About mode={mode} /> */}
     </>
   );
 }
