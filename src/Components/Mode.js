@@ -2,16 +2,16 @@ import React from "react";
 
 export default function Mode(props) {
   return (
-    <div class="form-check form-switch">
+    <div className="form-check form-switch">
       <input
-        class="form-check-input"
+        className="form-check-input"
         type="checkbox"
         role="switch"
         id="flexSwitchCheckChecked"
         onClick={props.togglemode}
       />
       <label
-        class={`form-check-label text-${
+        className={`form-check-label text-${
           props.mode === "light" ? "DARK" : "light"
         }`}
         for="flexSwitchCheckChecked"
