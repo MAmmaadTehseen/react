@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function Textforms(props) {
   const [text, setText] = useState("");
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState("Orignal");
   const [orignaltext, setOText] = useState("");
   const orignalForm = () => {
     setText(orignaltext);
@@ -32,6 +32,7 @@ export default function Textforms(props) {
     setText(newtext);
     setTask("Text is cleared");
     setOText(newtext);
+    setTask("");
   };
   const RemoveExtraspace = () => {
     let newtext = text.split(/[ ]+/);
@@ -63,23 +64,47 @@ export default function Textforms(props) {
             rows="2"
           ></textarea>
         </div>
-        <button className="btn btn-secondary m-2" onClick={HandleClearClick}>
+        <button
+          className="btn btn-secondary m-2"
+          disabled={text.length === 0}
+          onClick={HandleClearClick}
+        >
           Clear Text
         </button>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button
+          className="btn btn-primary"
+          disabled={text.length === 0}
+          onClick={handleUpClick}
+        >
           To uppercase
         </button>
-        <button className="btn btn-primary m-2" onClick={handleLoClick}>
+        <button
+          className="btn btn-primary m-2"
+          disabled={text.length === 0}
+          onClick={handleLoClick}
+        >
           To lower case
         </button>
-        <button className="btn btn-primary m-2" onClick={handleSpace}>
+        <button
+          className="btn btn-primary m-2"
+          disabled={text.length === 0}
+          onClick={handleSpace}
+        >
           Remove spaces{" "}
         </button>
 
-        <button className="btn btn-primary m-2" onClick={RemoveExtraspace}>
+        <button
+          className="btn btn-primary m-2"
+          disabled={text.length === 0}
+          onClick={RemoveExtraspace}
+        >
           Remove Extra space
         </button>
-        <button className="btn btn-primary m-2" onClick={orignalForm}>
+        <button
+          className="btn btn-primary m-2"
+          disabled={text.length === 0}
+          onClick={orignalForm}
+        >
           Get back to orignal form
         </button>
       </div>
@@ -90,11 +115,15 @@ export default function Textforms(props) {
       >
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length - 1} words and {text.length} characters
+          {text.split(" ").filter((a) => a.length !== 0).length} words and{" "}
+          {text.split("").filter((element) => element !== " ").length}{" "}
+          characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
-        <h2>Orignal</h2>
-        <p>{orignaltext}</p>
+        <p>
+          {0.008 * text.split(" ").filter((a) => a.length !== 0).length} Minutes
+          read
+        </p>
+
         <h2>{task}</h2>
         <p>{text}</p>
       </div>

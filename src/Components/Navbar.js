@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -9,7 +10,7 @@ export default function Navbar(props) {
         } text-${props.mode === "light" ? "grey" : "light"}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="">
+          <a className="navbar-brand" href="/">
             {props.title}
           </a>
           <button
@@ -29,18 +30,18 @@ export default function Navbar(props) {
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active"
                   aria-current="page"
-                  href="/About.js"
+                  to="/about"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a
