@@ -34,9 +34,14 @@ export default function Textforms(props) {
     setOText(newtext);
     setTask("");
   };
+  const RemoveSpace = () => {
+    let newtext = text.split(" ").join("");
+    setText(newtext);
+    setTask("Spaces are removed");
+  };
   const RemoveExtraspace = () => {
-    let newtext = text.split(/[ ]+/);
-    newtext = newtext.join(" ");
+    let newtext = text.split(/[ ]+/).join(" ");
+
     setText(newtext);
     setTask("Extra spaces are removed");
   };
@@ -90,7 +95,7 @@ export default function Textforms(props) {
           disabled={text.length === 0}
           onClick={handleSpace}
         >
-          Remove spaces{" "}
+          Remove spaces
         </button>
 
         <button
